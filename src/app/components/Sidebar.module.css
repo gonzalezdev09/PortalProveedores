@@ -1,0 +1,71 @@
+
+.sidebar {
+    width: 240px; /* Ancho fijo del sidebar */
+    height: 100vh; /* Altura completa */
+    position: fixed; /* Posición fija */
+    left: 0;
+    top: 0;
+    background-color: #ffffff; /* Fondo blanco */
+    border-right: 1px solid #e5e7eb; /* Borde derecho */
+    padding: 20px 0; /* Padding vertical, sin padding horizontal */
+    display: flex;
+    flex-direction: column;
+    z-index: 1000; /* Asegurar que esté por encima */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+  }
+  
+  .logoContainer {
+      padding: 0 20px 20px 20px; /* Padding horizontal para el logo */
+      margin-bottom: 20px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: center; /* Centrar logo/título */
+  }
+  
+  .logoPlaceholder { /* Estilo simple para un placeholder de logo */
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #4f46e5; /* Color índigo */
+  }
+  
+  .navList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Ocupa el espacio disponible */
+  }
+  
+  .navItem {
+    margin: 0;
+  }
+  
+  .navLink {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #374151; /* Gris oscuro */
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-left: 3px solid transparent; /* Borde para estado activo */
+    transition: background-color 0.2s ease, border-left-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .navLink:hover {
+    background-color: #f3f4f6; /* Gris claro al pasar el ratón */
+    color: #1f2937;
+  }
+  
+  /* Estilo para el enlace activo (requiere lógica en el componente) */
+  .navLinkActive {
+    background-color: #e0e7ff; /* Indigo muy claro */
+    color: #4f46e5; /* Indigo */
+    border-left-color: #4f46e5; /* Borde índigo */
+    font-weight: 600;
+  }
+  
+  .navIcon { /* Estilos para los iconos SVG */
+      width: 18px;
+      height: 18px;
+      stroke-width: 2;
+  }

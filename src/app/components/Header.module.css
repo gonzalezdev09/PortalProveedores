@@ -1,0 +1,53 @@
+
+.header {
+    height: 60px; /* Altura fija del header */
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0 30px; /* Padding horizontal */
+    display: flex;
+    justify-content: flex-end; /* Alinear contenido a la derecha */
+    align-items: center;
+    position: fixed; /* Posición fija */
+    top: 0;
+    left: 240px; /* Desplazado por el ancho del sidebar */
+    right: 0;
+    z-index: 999; /* Por debajo del sidebar si se superponen */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  
+  .userInfo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre icono y texto */
+  }
+  
+  .userIcon { /* Placeholder para un icono de usuario */
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #e0e7ff; /* Fondo índigo claro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4f46e5; /* Índigo */
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  
+  .userDetails span {
+    display: block; /* Nombres en líneas separadas */
+    line-height: 1.3;
+  }
+  
+  .userName {
+    font-weight: 600;
+    color: #1f2937; /* Gris muy oscuro */
+    font-size: 0.9rem;
+  }
+  
+  .companyName {
+    font-size: 0.75rem;
+    color: #6b7280; /* Gris */
+  }
+  
+  

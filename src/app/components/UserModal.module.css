@@ -1,0 +1,160 @@
+.modalOverlay {
+    position: fixed; /* Posición fija para cubrir toda la pantalla */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  }
+  
+  /* Estilos para el contenido del modal */
+  .modalContent {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px; /* Ancho máximo del modal */
+    position: relative;
+    border: 1px solid #e2e8f0;
+  }
+  
+  /* Estilos para la cabecera del modal */
+  .modalHeader {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .modalTitle {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600;
+    color: #1a202c;
+    margin: 0;
+  }
+  
+  .modalDescription {
+    font-size: 0.875rem; /* 14px */
+    color: #718096;
+    margin-top: 5px;
+  }
+  
+  /* Estilos para el cuerpo del formulario */
+  .formBody {
+    display: grid;
+    gap: 18px; /* Espacio entre filas del formulario */
+  }
+  
+  /* Estilos para cada grupo de input/label */
+  .formGroup {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Columna para label, columna para input */
+    align-items: center;
+    gap: 10px; /* Espacio entre label e input */
+  }
+  
+  .formLabel {
+    font-size: 0.875rem; /* 14px */
+    font-weight: 500;
+    color: #4a5568;
+    text-align: right;
+  }
+  
+  .formInput,
+  .formSelect {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    box-sizing: border-box; /* Asegura que padding no aumente el tamaño */
+    transition: border-color 0.2s ease-in-out;
+  }
+  
+  .formInput:focus,
+  .formSelect:focus {
+    border-color: #4299e1; /* Color de borde al enfocar */
+    outline: none; /* Quitar outline por defecto */
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.3); /* Sombra sutil al enfocar */
+  }
+  
+  /* Estilos específicos para el switch (checkbox estilizado) */
+  .statusGroup {
+      grid-template-columns: 1fr 3fr;
+      align-items: center;
+      gap: 10px;
+  }
+  
+  .statusControl {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+  }
+  
+  /* Estilos para mensajes de error */
+  .errorMessage {
+    font-size: 0.75rem; /* 12px */
+    color: #e53e3e; /* Rojo */
+    grid-column: 2 / 4; /* Alinear con el input */
+    margin-top: -10px; /* Acercar al input */
+    margin-bottom: 5px;
+  }
+  
+  /* Estilos para el pie del modal */
+  .modalFooter {
+    display: flex;
+    justify-content: flex-end; /* Alinea botones a la derecha */
+    gap: 10px; /* Espacio entre botones */
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #e2e8f0;
+  }
+  
+  /* Estilos base para botones */
+  .button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  }
+  
+  /* Botón primario (Guardar/Crear) */
+  .buttonPrimary {
+    background-color: #4f46e5; /* Indigo */
+    color: white;
+    border-color: #4f46e5;
+  }
+  
+  .buttonPrimary:hover {
+    background-color: #4338ca;
+    border-color: #4338ca;
+  }
+  
+  /* Botón secundario (Cancelar) */
+  .buttonSecondary {
+    background-color: #fff;
+    color: #4a5568;
+    border-color: #cbd5e0;
+  }
+  
+  .buttonSecondary:hover {
+    background-color: #f7fafc; /* Gris muy claro */
+    border-color: #a0aec0;
+  }
+  
+  /* Estilos para input inválido */
+  .inputError {
+      border-color: #e53e3e; /* Borde rojo */
+  }
+  .inputError:focus {
+      border-color: #e53e3e;
+      box-shadow: 0 0 0 2px rgba(229, 62, 62, 0.3); /* Sombra roja */
+  }
+  

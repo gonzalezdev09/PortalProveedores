@@ -1,0 +1,133 @@
+/* Contenedor de la tabla */
+.tableContainer {
+    border: 1px solid #e2e8f0; /* Gris claro */
+    border-radius: 8px;
+    overflow: hidden; /* Para que el borde redondeado afecte a la tabla */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+  }
+  
+  /* Estilos de la tabla */
+  .table {
+    width: 100%;
+    border-collapse: collapse; /* Une los bordes de las celdas */
+  }
+  
+  /* Cabecera de la tabla */
+  .tableHeader {
+    background-color: #f8fafc; /* Gris muy claro */
+  }
+  
+  .tableHeader th {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 0.75rem; /* 12px */
+    font-weight: 600;
+    color: #64748b; /* Gris azulado */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  /* Cuerpo de la tabla */
+  .tableBody tr {
+    border-bottom: 1px solid #e2e8f0;
+    transition: background-color 0.15s ease-in-out;
+  }
+  
+  .tableBody tr:last-child {
+    border-bottom: none; /* Quitar borde inferior de la última fila */
+  }
+  
+  .tableBody tr:hover {
+    background-color: #f7fafc; /* Fondo ligero al pasar el ratón */
+  }
+  
+  .tableBody td {
+    padding: 12px 15px;
+    font-size: 0.875rem; /* 14px */
+    color: #2d3748; /* Gris oscuro */
+    vertical-align: middle; /* Alinear verticalmente al centro */
+  }
+  
+  /* Estilos para la celda de acciones */
+  .actionsCell {
+    text-align: center;
+  }
+  
+  .actionsContainer {
+      display: flex;
+      justify-content: center;
+      gap: 8px; /* Espacio entre botones de acción */
+  }
+  
+  /* Estilos para los botones de acción */
+  .actionButton {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    color: #718096; /* Gris */
+    transition: color 0.2s ease-in-out;
+    display: inline-flex; /* Para alinear íconos si se usan */
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  }
+  .actionButton:hover {
+    color: #2d3748; /* Gris más oscuro */
+    background-color: #edf2f7; /* Fondo ligero al pasar el ratón */
+  }
+  
+  /* Colores específicos para botones de acción */
+  .editButton:hover {
+      color: #3b82f6; /* Azul */
+      background-color: #dbeafe;
+  }
+  .toggleButtonActive:hover { /* Botón para desactivar (cuando está activo) */
+      color: #f59e0b; /* Ámbar */
+      background-color: #fef3c7;
+  }
+  .toggleButtonInactive:hover { /* Botón para activar (cuando está inactivo) */
+       color: #10b981; /* Verde */
+       background-color: #d1fae5;
+  }
+  
+  
+  /* Estilos para el badge de estatus */
+  .statusBadge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px; /* Más redondeado para forma de píldora */
+    font-size: 0.75rem; /* 12px */
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .statusActive {
+    background-color: #dcfce7; /* Verde claro */
+    color: #166534; /* Verde oscuro */
+    border: 1px solid #86efac;
+  }
+  
+  .statusInactive {
+    background-color: #fee2e2; /* Rojo claro */
+    color: #991b1b; /* Rojo oscuro */
+    border: 1px solid #fca5a5;
+  }
+  
+  /* Mensaje de tabla vacía */
+  .emptyMessageCell {
+      text-align: center;
+      padding: 40px 15px;
+      color: #718096;
+  }
+  .emptyMessageContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+  }
+  .emptyMessageContent span {
+      font-size: 0.875rem;
+  }

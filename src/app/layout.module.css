@@ -1,0 +1,57 @@
+.appContainer {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .sidebarPlaceholder {
+    /* Espacio reservado para el sidebar fijo */
+    width: 240px; /* Debe coincidir con el ancho del Sidebar */
+    flex-shrink: 0; /* Evita que se encoja */
+  }
+  
+  .mainContentWrapper {
+    flex-grow: 1; /* Ocupa el resto del espacio */
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Para el posicionamiento del header fijo */
+    background-color: #f9fafb; /* Fondo general del área de contenido */
+  }
+  
+  .headerPlaceholder {
+     /* Espacio reservado para el header fijo */
+     height: 60px; /* Debe coincidir con la altura del Header */
+  }
+  
+  .pageContent {
+    flex-grow: 1; /* Ocupa el espacio restante verticalmente */
+    padding: 25px 30px; /* Padding para el contenido de la página */
+    overflow-y: auto; /* Permitir scroll si el contenido es largo */
+  }.appContainer {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .sidebarPlaceholder {
+    /* Espacio reservado para el sidebar fijo */
+    width: 240px; /* Debe coincidir con el ancho del Sidebar */
+    flex-shrink: 0; /* Evita que se encoja */
+  }
+  
+  .mainContentWrapper {
+    flex-grow: 1; /* Ocupa el resto del espacio */
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Para el posicionamiento del header fijo */
+    background-color: #f9fafb; /* Fondo general del área de contenido */
+  }
+  
+  .headerPlaceholder {
+     /* Espacio reservado para el header fijo */
+     height: 60px; /* Debe coincidir con la altura del Header */
+  }
+  
+  .pageContent {
+    flex-grow: 1; /* Ocupa el espacio restante verticalmente */
+    padding: 25px 30px; /* Padding para el contenido de la página */
+    overflow-y: auto; /* Permitir scroll si el contenido es largo */
+  }

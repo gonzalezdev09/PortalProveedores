@@ -1,0 +1,163 @@
+
+  .pageTitle {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .loadingContainer,
+  .errorContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    color: #6b7280;
+    font-size: 1rem;
+    gap: 10px;
+  }
+  
+  .spinner {
+    border: 4px solid #e5e7eb;
+    border-top: 4px solid #4f46e5;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .contentGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas adaptables */
+    gap: 30px; /* Espacio entre secciones */
+  }
+  
+  .infoSection {
+    background-color: #ffffff;
+    padding: 20px 25px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .sectionTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #374151;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  
+  .dataList {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Columna para label, columna para valor */
+    gap: 10px 15px; /* Espacio vertical y horizontal */
+    font-size: 0.9rem;
+  }
+  
+  .dataLabel {
+    font-weight: 500;
+    color: #4b5563;
+    white-space: nowrap; /* Evitar que el label se rompa */
+  }
+  
+  .dataValue {
+    color: #1f2937;
+    word-break: break-word; /* Romper palabras largas si es necesario */
+  }
+  
+  /* Estilos para el historial */
+  .historyList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
+    border-left: 2px solid #e5e7eb; /* Línea de tiempo simple */
+    position: relative;
+  }
+  
+  .historyItem {
+    padding: 8px 0 8px 25px; /* Espacio a la izquierda para la línea */
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  /* Círculo en la línea de tiempo */
+  .historyItem::before {
+    content: '';
+    position: absolute;
+    left: -6px; /* Posicionar sobre la línea */
+    top: 12px;
+    width: 10px;
+    height: 10px;
+    background-color: #a5b4fc; /* Color índigo claro */
+    border-radius: 50%;
+    border: 2px solid #ffffff; /* Borde blanco para separar */
+  }
+  
+  .historyTimestamp {
+    display: block;
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-bottom: 3px;
+  }
+  
+  .historyDescription {
+    font-size: 0.875rem;
+    color: #374151;
+  }
+  
+  .historyUser {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      font-style: italic;
+      margin-top: 2px;
+  }
+  
+  /* Botón Ver Peritación */
+  .appraisalButton {
+    padding: 8px 15px;
+    background-color: #10b981; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex; /* Para alinear con texto si es necesario */
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.2s ease-in-out;
+    margin-top: 15px;
+  }
+  
+  .appraisalButton:hover {
+    background-color: #059669; /* Verde más oscuro */
+  }
+  
+  /* Estilos para el badge de estado en detalle */
+  .statusBadge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+  }
+  .statusPending { background-color: #fef3c7; color: #a16207; border-color: #fde68a; }
+  .statusInProgress { background-color: #dbeafe; color: #1e40af; border-color: #93c5fd; }
+  .statusBilling { background-color: #e0e7ff; color: #3730a3; border-color: #a5b4fc; }
+  .statusPaid { background-color: #dcfce7; color: #166534; border-color: #86efac; }
+  .statusCancelled { background-color: #fee2e2; color: #991b1b; border-color: #fca5a5; }
+  
+  

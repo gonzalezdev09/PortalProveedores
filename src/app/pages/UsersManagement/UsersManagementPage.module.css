@@ -1,0 +1,80 @@
+/* Contenedor principal de la página */
+/* .pageContainer {
+    padding: 20px 30px;
+    background-color: #f9fafb; 
+    min-height: 100vh;
+    font-family: sans-serif; 
+  } */
+/*   
+  .contentWrapper {
+      max-width: 1100px; 
+      margin: 0 auto; 
+  } */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    /* Quitar borde si el layout general ya lo maneja o si no se desea */
+    /* border-bottom: 1px solid #e5e7eb; */
+  }
+  
+  .title {
+    font-size: 1.5rem; /* Ajustar tamaño si es necesario */
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  .createButton {
+    padding: 10px 18px;
+    background-color: #4f46e5; /* Indigo */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease-in-out;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .createButton:hover {
+    background-color: #4338ca; /* Indigo más oscuro */
+  }
+  
+  .createButton:disabled {
+      background-color: #a5b4fc; /* Indigo claro (deshabilitado) */
+      cursor: not-allowed;
+  }
+  
+  .tableSection {
+    margin-top: 20px;
+  }
+  
+  .loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    color: #6b7280;
+    font-size: 1rem;
+    gap: 10px;
+  }
+  
+  .spinner {
+    border: 4px solid #e5e7eb;
+    border-top: 4px solid #4f46e5;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

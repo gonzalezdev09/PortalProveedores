@@ -1,0 +1,126 @@
+/* Reutilizar estilos de UserTable.module.css donde aplique  */
+.tableContainer {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHeader {
+  background-color: #f8fafc;
+}
+
+.tableHeader th {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tableBody tr {
+  border-bottom: 1px solid #e2e8f0;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.tableBody tr:last-child {
+  border-bottom: none;
+}
+
+.tableBody tr:hover {
+  background-color: #f7fafc;
+}
+
+.tableBody td {
+  padding: 12px 15px;
+  font-size: 0.875rem;
+  color: #2d3748;
+  vertical-align: middle;
+}
+
+.actionsCell {
+  text-align: center;
+}
+
+.actionButton {
+  padding: 6px 12px;
+  background-color: #4f46e5; /* Indigo */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem; /* 13px */
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none; /* Para el Link */
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.actionButton:hover {
+  background-color: #4338ca; /* Indigo más oscuro */
+}
+
+/* Estilos para el badge de estatus (adaptados) */
+.statusBadge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize; /* Muestra el texto como viene */
+  border: 1px solid transparent;
+}
+
+/* Colores específicos para cada estado */
+.statusPending { /* En espera */
+  background-color: #fef3c7; /* Amarillo claro */
+  color: #a16207; /* Amarillo oscuro */
+  border-color: #fde68a;
+}
+.statusInProgress { /* En ejecución */
+  background-color: #dbeafe; /* Azul claro */
+  color: #1e40af; /* Azul oscuro */
+  border-color: #93c5fd;
+}
+.statusBilling { /* Facturación */
+  background-color: #e0e7ff; /* Indigo claro */
+  color: #3730a3; /* Indigo oscuro */
+  border-color: #a5b4fc;
+}
+.statusPaid { /* Pagado */
+  background-color: #dcfce7; /* Verde claro */
+  color: #166534; /* Verde oscuro */
+  border-color: #86efac;
+}
+.statusCancelled { /* Cancelada */
+  background-color: #fee2e2; /* Rojo claro */
+  color: #991b1b; /* Rojo oscuro */
+  border-color: #fca5a5;
+}
+
+/* Mensaje de tabla vacía */
+.emptyMessageCell {
+    text-align: center;
+    padding: 40px 15px;
+    color: #718096;
+}
+.emptyMessageContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.emptyMessageContent span {
+    font-size: 0.875rem;
+}

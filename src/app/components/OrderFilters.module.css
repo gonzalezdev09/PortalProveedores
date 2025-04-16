@@ -1,0 +1,98 @@
+
+.filtersContainer {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 25px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    /* ** Cambiado a Flexbox ** */
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    gap: 15px 20px; /* Espacio vertical y horizontal */
+    align-items: flex-end; /* Alinear elementos (incluyendo botón) a la parte inferior */
+  }
+  
+  .filterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /* ** Añadido Flex Basis para control de tamaño ** */
+    flex: 1 1 180px; /* Crecer, encoger, base de tamaño (similar a minmax) */
+    min-width: 180px; /* Asegurar ancho mínimo */
+  }
+  
+  .filterLabel {
+    font-size: 0.8rem; /* 13px */
+    font-weight: 500;
+    color: #4b5563; /* Gris */
+    margin-bottom: 2px;
+  }
+  
+  .filterInput,
+  .filterSelect {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #d1d5db; /* Gris claro */
+    border-radius: 6px;
+    font-size: 0.875rem; /* 14px */
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #1f2937; /* Color de texto oscuro */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  /* Estilo para el placeholder */
+  .filterInput::placeholder {
+    color: #9ca3af; /* Color gris claro para el placeholder */
+  }
+  
+  
+  .filterInput:focus,
+  .filterSelect:focus {
+    border-color: #6366f1; /* Indigo */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+  }
+  
+  /* Estilos específicos para el grupo de fechas */
+  .dateRangeGroup {
+      display: flex;
+      gap: 10px;
+      align-items: center; /* Alinear verticalmente */
+  }
+  
+  .dateRangeGroup input {
+      flex: 1; /* Ocupar espacio disponible */
+  }
+  
+  /* Contenedor para botones */
+  .buttonGroup {
+      /* ** Añadido Flex Basis también al grupo del botón ** */
+      flex: 1 1 180px;
+      min-width: 180px; /* Coherente con los otros grupos */
+      display: flex; /* Para alinear el botón dentro si es necesario */
+      align-items: flex-end; /* Alinea el botón abajo */
+  }
+  
+  .clearButton {
+    margin-left: 80px;
+    padding: 8px 15px;
+    background-color: #f3f4f6; /* Gris muy claro */
+    color: #4b5563;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    /* El ancho ahora será automático basado en el padding */
+    /* Opcional: añadir un ancho mínimo si se desea */
+     min-width: 120px;
+  }
+  
+  .clearButton:hover {
+    background-color: #e5e7eb;
+    border-color: #9ca3af;
+  }
+  
