@@ -1,163 +1,414 @@
+.pageTitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
 
-  .pageTitle {
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #111827;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #e5e7eb;
-  }
-  
-  .loadingContainer,
-  .errorContainer {
+.loadingContainer,
+.errorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  color: #6b7280;
+  font-size: 1rem;
+  gap: 10px;
+}
+
+.spinner {
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #4f46e5;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.infoSection {
+  background-color: #ffffff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.sectionSubTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.dataList {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px 15px;
+  font-size: 0.9rem;
+}
+
+.dataLabel {
+  font-weight: 500;
+  color: #4b5563;
+  white-space: nowrap;
+}
+
+.dataValue {
+  color: #1f2937;
+  word-break: break-word;
+}
+
+/* Estilos para el historial */
+.historyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 15px;
+  border-left: 2px solid #e5e7eb;
+  position: relative;
+}
+
+.historyItem {
+  padding: 8px 0 8px 25px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.historyItem::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 12px;
+  width: 10px;
+  height: 10px;
+  background-color: #a5b4fc;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+.historyTimestamp {
+  display: block;
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-bottom: 3px;
+}
+
+.historyDescription {
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.historyUser {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    font-style: italic;
+    margin-top: 2px;
+}
+
+/* Botón Ver Peritación */
+.appraisalButton {
+  padding: 8px 15px;
+  background-color: #10b981; /* Verde */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 15px;
+}
+
+.appraisalButton:hover {
+  background-color: #059669;
+}
+
+/* Estilos para el badge de estado en detalle */
+.statusBadge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  /* text-transform: capitalize; Ya no capitalizar para ver texto exacto del enum */
+  border: 1px solid transparent;
+}
+.statusPending { background-color: #fef3c7; color: #a16207; border-color: #fde68a; }
+.statusPendingCar { background-color: #fef9c3; color: #854d0e; border-color: #fef08a; } /* Estilo para PENDINGCAR */
+.statusInProgress { background-color: #dbeafe; color: #1e40af; border-color: #93c5fd; }
+.statusBilling { background-color: #e0e7ff; color: #3730a3; border-color: #a5b4fc; }
+.statusPaid { background-color: #dcfce7; color: #166534; border-color: #86efac; }
+.statusCancelled { background-color: #fee2e2; color: #991b1b; border-color: #fca5a5; }
+
+/* --- Estilos para Sección de Piezas --- */
+.partsSection { background-color: #ffffff; padding: 20px 25px; border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); margin-top: 30px; }
+.partsList { list-style: none; padding: 0; margin: 0; margin-top: 15px; }
+.partItem { display: grid; grid-template-columns: 1fr auto auto; gap: 15px; align-items: center; padding: 12px 0; border-bottom: 1px solid #f3f4f6; }
+.partItem:last-child { border-bottom: none; }
+.partName { font-weight: 500; color: #374151; font-size: 0.9rem; }
+.partQuantity { font-size: 0.85rem; color: #6b7280; text-align: right; min-width: 60px; }
+.partDateInputContainer { display: flex; flex-direction: column; gap: 3px; }
+.partDateLabel { font-size: 0.7rem; color: #6b7280; }
+.partDateInput { padding: 6px 8px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 0.8rem; min-width: 140px; }
+.partDateInput:focus { border-color: #6366f1; outline: none; box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.3); }
+/* ** Modificado: Contenedor de botones para usar Flexbox ** */
+.partsButtonContainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 20px;
-    color: #6b7280;
-    font-size: 1rem;
+    justify-content: flex-end;
     gap: 10px;
-  }
-  
-  .spinner {
-    border: 4px solid #e5e7eb;
-    border-top: 4px solid #4f46e5;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    animation: spin 1s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  .contentGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas adaptables */
-    gap: 30px; /* Espacio entre secciones */
-  }
-  
-  .infoSection {
-    background-color: #ffffff;
-    padding: 20px 25px;
-    border-radius: 8px;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  }
-  
-  .sectionTitle {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #374151;
-    margin-top: 0;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #f3f4f6;
-  }
-  
-  .dataList {
-    display: grid;
-    grid-template-columns: auto 1fr; /* Columna para label, columna para valor */
-    gap: 10px 15px; /* Espacio vertical y horizontal */
-    font-size: 0.9rem;
-  }
-  
-  .dataLabel {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #f3f4f6; /* Separador opcional */
+}
+
+/* --- Estilos para Sección Recepción Vehículo --- */
+.receptionSection {
+  background-color: #ffffff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  margin-top: 30px;
+}
+
+.receptionFormGroup {
+    margin-bottom: 15px;
+}
+
+.receptionLabel {
+    display: block;
+    font-size: 0.8rem;
     font-weight: 500;
     color: #4b5563;
-    white-space: nowrap; /* Evitar que el label se rompa */
-  }
-  
-  .dataValue {
-    color: #1f2937;
-    word-break: break-word; /* Romper palabras largas si es necesario */
-  }
-  
-  /* Estilos para el historial */
-  .historyList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-top: 15px;
-    border-left: 2px solid #e5e7eb; /* Línea de tiempo simple */
-    position: relative;
-  }
-  
-  .historyItem {
-    padding: 8px 0 8px 25px; /* Espacio a la izquierda para la línea */
-    position: relative;
-    margin-bottom: 10px;
-  }
-  
-  /* Círculo en la línea de tiempo */
-  .historyItem::before {
-    content: '';
-    position: absolute;
-    left: -6px; /* Posicionar sobre la línea */
-    top: 12px;
-    width: 10px;
-    height: 10px;
-    background-color: #a5b4fc; /* Color índigo claro */
-    border-radius: 50%;
-    border: 2px solid #ffffff; /* Borde blanco para separar */
-  }
-  
-  .historyTimestamp {
-    display: block;
-    font-size: 0.75rem;
-    color: #6b7280;
-    margin-bottom: 3px;
-  }
-  
-  .historyDescription {
+    margin-bottom: 5px;
+}
+
+.receptionInput,
+.receptionTextarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
     font-size: 0.875rem;
-    color: #374151;
-  }
-  
-  .historyUser {
-      font-size: 0.75rem;
-      color: #9ca3af;
-      font-style: italic;
-      margin-top: 2px;
-  }
-  
-  /* Botón Ver Peritación */
-  .appraisalButton {
+    box-sizing: border-box;
+    color: #e0e5ec;
+}
+
+.receptionTextarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.receptionInput:focus,
+.receptionTextarea:focus {
+  border-color: #6366f1;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+.receptionButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+    clear: both;
+}
+
+.actionButtonBase {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.primaryButton {
+  background-color: #4f46e5;
+  color: white;
+}
+.primaryButton:hover {
+  background-color: #4338ca;
+}
+
+.secondaryButton {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+}
+.secondaryButton:hover {
+  background-color: #e5e7eb;
+}
+
+/* --- Nuevos Estilos para Sección En Ejecución --- */
+.inProgressSection {
+  background-color: #ffffff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  margin-top: 30px;
+}
+
+.requestForm {
+    margin-bottom: 25px; /* Espacio antes de la sección de adjuntos */
+}
+
+.requestFormGroup {
+    margin-bottom: 15px;
+}
+
+.requestLabel { /* Reutilizar estilo de label */
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #0f1621;
+    margin-bottom: 5px;
+}
+
+.requestSelect,
+.requestTextarea { /* Reutilizar estilo de input/textarea */
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    box-sizing: border-box;
+    color: #4b5563;
+}
+.requestTextarea {
+    min-height: 80px;
+    resize: vertical;
+}
+.requestSelect:focus,
+.requestTextarea:focus {
+  border-color: #6366f1;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+.attachmentSection {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #f3f4f6; /* Separador ligero */
+}
+
+.fileInputLabel { /* Estilo para que el label parezca un botón */
+    display: inline-block;
     padding: 8px 15px;
-    background-color: #10b981; /* Verde */
+    background-color: #10b981; /* Verde (igual que peritación) */
     color: white;
     border: none;
     border-radius: 6px;
     font-size: 0.875rem;
     font-weight: 500;
     cursor: pointer;
-    display: inline-flex; /* Para alinear con texto si es necesario */
-    align-items: center;
-    gap: 6px;
     transition: background-color 0.2s ease-in-out;
-    margin-top: 15px;
-  }
-  
-  .appraisalButton:hover {
-    background-color: #059669; /* Verde más oscuro */
-  }
-  
-  /* Estilos para el badge de estado en detalle */
-  .statusBadge {
-    display: inline-block;
-    padding: 3px 10px;
-    border-radius: 12px;
+    margin-right: 10px; /* Espacio antes del botón de subir */
+}
+.fileInputLabel:hover {
+    background-color: #059669;
+}
+
+.fileInput { /* Ocultar el input de archivo real */
+    display: none;
+}
+
+.fileName { /* Estilo para mostrar nombre de archivo seleccionado */
     font-size: 0.8rem;
+    color: #6b7280;
+    margin-left: 10px;
+}
+
+
+.buttonContainer { /* Contenedor para botones al final de la sección */
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* --- Nuevos Estilos para Sección Facturación --- */
+.billingSection {
+  background-color: #ffffff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  margin-top: 30px;
+}
+
+.invoiceInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+    padding: 10px 0;
+}
+
+.invoiceLink a {
+    color: #4f46e5;
+    text-decoration: none;
     font-weight: 500;
-    text-transform: capitalize;
-    border: 1px solid transparent;
-  }
-  .statusPending { background-color: #fef3c7; color: #a16207; border-color: #fde68a; }
-  .statusInProgress { background-color: #dbeafe; color: #1e40af; border-color: #93c5fd; }
-  .statusBilling { background-color: #e0e7ff; color: #3730a3; border-color: #a5b4fc; }
-  .statusPaid { background-color: #dcfce7; color: #166534; border-color: #86efac; }
-  .statusCancelled { background-color: #fee2e2; color: #991b1b; border-color: #fca5a5; }
-  
-  
+}
+.invoiceLink a:hover {
+    text-decoration: underline;
+}
+
+.paymentStatusLabel {
+    font-weight: 500;
+    color: #4b5563;
+    margin-right: 8px;
+}
+
+.paymentStatusBadge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+
+.paymentPending { /* Pendiente de Pago */
+  background-color: #fef3c7; /* Amarillo claro */
+  color: #a16207; /* Amarillo oscuro */
+  border-color: #fde68a;
+}
+.paymentPaid { /* Pagada */
+  background-color: #dcfce7; /* Verde claro */
+  color: #166534; /* Verde oscuro */
+  border-color: #86efac;
+}
