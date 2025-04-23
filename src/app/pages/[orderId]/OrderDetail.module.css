@@ -1,3 +1,4 @@
+
 .pageTitle {
   font-size: 1.75rem;
   font-weight: 600;
@@ -57,16 +58,6 @@
   border-bottom: 1px solid #f3f4f6;
 }
 
-.sectionSubTitle {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #374151;
-  margin-top: 0;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #f3f4f6;
-}
-
 .dataList {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -86,85 +77,21 @@
 }
 
 /* Estilos para el historial */
-.historyList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  margin-top: 15px;
-  border-left: 2px solid #e5e7eb;
-  position: relative;
-}
-
-.historyItem {
-  padding: 8px 0 8px 25px;
-  position: relative;
-  margin-bottom: 10px;
-}
-
-.historyItem::before {
-  content: '';
-  position: absolute;
-  left: -6px;
-  top: 12px;
-  width: 10px;
-  height: 10px;
-  background-color: #a5b4fc;
-  border-radius: 50%;
-  border: 2px solid #ffffff;
-}
-
-.historyTimestamp {
-  display: block;
-  font-size: 0.75rem;
-  color: #6b7280;
-  margin-bottom: 3px;
-}
-
-.historyDescription {
-  font-size: 0.875rem;
-  color: #374151;
-}
-
-.historyUser {
-    font-size: 0.75rem;
-    color: #9ca3af;
-    font-style: italic;
-    margin-top: 2px;
-}
+.historyList { list-style: none; padding: 0; margin: 0; margin-top: 15px; border-left: 2px solid #e5e7eb; position: relative; }
+.historyItem { padding: 8px 0 8px 25px; position: relative; margin-bottom: 10px; }
+.historyItem::before { content: ''; position: absolute; left: -6px; top: 12px; width: 10px; height: 10px; background-color: #a5b4fc; border-radius: 50%; border: 2px solid #ffffff; }
+.historyTimestamp { display: block; font-size: 0.75rem; color: #6b7280; margin-bottom: 3px; }
+.historyDescription { font-size: 0.875rem; color: #374151; }
+.historyUser { font-size: 0.75rem; color: #9ca3af; font-style: italic; margin-top: 2px; }
 
 /* Botón Ver Peritación */
-.appraisalButton {
-  padding: 8px 15px;
-  background-color: #10b981; /* Verde */
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: background-color 0.2s ease-in-out;
-  margin-top: 15px;
-}
-
-.appraisalButton:hover {
-  background-color: #059669;
-}
+.appraisalButton { padding: 8px 15px; background-color: #10b981; color: white; border: none; border-radius: 6px; font-size: 0.875rem; font-weight: 500; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: background-color 0.2s ease-in-out; margin-top: 15px; }
+.appraisalButton:hover { background-color: #059669; }
 
 /* Estilos para el badge de estado en detalle */
-.statusBadge {
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  /* text-transform: capitalize; Ya no capitalizar para ver texto exacto del enum */
-  border: 1px solid transparent;
-}
+.statusBadge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 500; border: 1px solid transparent; }
 .statusPending { background-color: #fef3c7; color: #a16207; border-color: #fde68a; }
-.statusPendingCar { background-color: #fef9c3; color: #854d0e; border-color: #fef08a; } /* Estilo para PENDINGCAR */
+.statusPendingCar { background-color: #fef9c3; color: #854d0e; border-color: #fef08a; }
 .statusInProgress { background-color: #dbeafe; color: #1e40af; border-color: #93c5fd; }
 .statusBilling { background-color: #e0e7ff; color: #3730a3; border-color: #a5b4fc; }
 .statusPaid { background-color: #dcfce7; color: #166534; border-color: #86efac; }
@@ -172,243 +99,161 @@
 
 /* --- Estilos para Sección de Piezas --- */
 .partsSection { background-color: #ffffff; padding: 20px 25px; border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); margin-top: 30px; }
-.partsList { list-style: none; padding: 0; margin: 0; margin-top: 15px; }
-.partItem { display: grid; grid-template-columns: 1fr auto auto; gap: 15px; align-items: center; padding: 12px 0; border-bottom: 1px solid #f3f4f6; }
+.partsList { list-style: none; margin-top: 15px; }
+
+/* ** Estilo para la cabecera de la lista de piezas ** */
+.partListHeader {
+    display: grid;
+    /* Mismas columnas que .partItem */
+    grid-template-columns: minmax(150px, 2fr) minmax(120px, 1fr) 20px 20px 20px auto;
+    gap: 10px 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e5e7eb; /* Borde más grueso para cabecera */
+}
+/* ** Estilo para los labels de la cabecera ** */
+.partListHeader > span {
+    font-weight: 600; /* Negrita */
+    font-size: 0.75rem; /* Más pequeño */
+    color: #4b5563; /* Gris */
+    text-transform: uppercase;
+}
+/* ** Alinear cabeceras numéricas/cortas a la derecha/centro ** */
+/* .partListHeader .partQuality,
+.partListHeader .partDeliveryDays,
+.partListHeader .partQuantity {
+    text-align: center;
+} */
+.partQuantity {
+    text-align: right; /* Cantidad a la derecha */
+}
+
+.partListHeader {
+  display: grid;
+  grid-template-columns: minmax(150px, 2fr) minmax(120px, 1fr) 40px 40px 60px auto;
+  gap: 10px 15px;
+  padding-bottom: 8px;
+  padding-right: 35px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.extraPadding {
+  font-weight: 500;
+  color: #4b5563;
+  white-space: nowrap;
+  margin-right: 45px; /* o el valor que necesites */
+}
+
+.partItem {
+  display: grid;
+  /* Pieza | Proveedor | Cal. | Días | Cant. | Fecha Rec. */
+  grid-template-columns: minmax(150px, 2fr) minmax(120px, 1fr) 40px 40px 60px auto;
+  gap: 10px 15px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
 .partItem:last-child { border-bottom: none; }
+
 .partName { font-weight: 500; color: #374151; font-size: 0.9rem; }
+.partSupplier, .partQuality, .partDeliveryDays {
+    font-size: 0.85rem;
+    color: #6b7280;
+    white-space: nowrap;
+}
+.partQuality { text-align: center; font-weight: 500; }
+.partDeliveryDays { text-align: center; }
 .partQuantity { font-size: 0.85rem; color: #6b7280; text-align: right; min-width: 60px; }
 .partDateInputContainer { display: flex; flex-direction: column; gap: 3px; }
 .partDateLabel { font-size: 0.7rem; color: #6b7280; }
 .partDateInput { padding: 6px 8px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 0.8rem; min-width: 140px; }
 .partDateInput:focus { border-color: #6366f1; outline: none; box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.3); }
-/* ** Modificado: Contenedor de botones para usar Flexbox ** */
-.partsButtonContainer {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid #f3f4f6; /* Separador opcional */
-}
+.partsButtonContainer { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; padding-top: 15px; border-top: 1px solid #f3f4f6; }
+.saveDatesButton { /* Ya no necesita float */ }
+
+
 
 /* --- Estilos para Sección Recepción Vehículo --- */
-.receptionSection {
-  background-color: #ffffff;
-  padding: 20px 25px;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  margin-top: 30px;
-}
+.receptionSection { background-color: #ffffff; padding: 20px 25px; border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); margin-top: 30px; }
+.receptionFormGroup { margin-bottom: 15px; }
+.receptionLabel { display: block; font-size: 0.8rem; font-weight: 500; color: #4b5563; margin-bottom: 5px; }
+.receptionInput, .receptionTextarea { width: 100%; padding: 8px 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.875rem; box-sizing: border-box; color: #1f2937; }
+.receptionTextarea { min-height: 80px; resize: vertical; }
+.receptionInput:focus, .receptionTextarea:focus { border-color: #6366f1; outline: none; box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3); }
+.receptionButtonContainer { display: flex; justify-content: flex-end; gap: 10px; margin-top: 15px; clear: both; }
+.actionButtonBase { padding: 8px 15px; border: none; border-radius: 6px; font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: background-color 0.2s ease-in-out; }
+.primaryButton { background-color: #4f46e5; color: white; }
+.primaryButton:hover { background-color: #4338ca; }
+.secondaryButton { background-color: #f3f4f6; color: #4b5563; border: 1px solid #d1d5db; }
+.secondaryButton:hover { background-color: #e5e7eb; }
 
-.receptionFormGroup {
-    margin-bottom: 15px;
-}
+/* --- Estilos para Sección En Ejecución --- */
+.inProgressSection { background-color: #ffffff; padding: 20px 25px; border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); margin-top: 30px; }
+.requestForm { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid #f3f4f6; } /* Separar formularios */
+.requestFormGroup { margin-bottom: 15px; }
+.requestLabel { display: block; font-size: 0.8rem; font-weight: 500; color: #4b5563; margin-bottom: 5px; }
+.requestSelect, .requestTextarea { width: 100%; padding: 8px 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.875rem; box-sizing: border-box; color: #1f2937; }
+.requestTextarea { min-height: 80px; resize: vertical; }
+.requestSelect:focus, .requestTextarea:focus { border-color: #6366f1; outline: none; box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3); }
+.attachmentSection { margin-top: 20px; padding-bottom: 20px; border-bottom: 1px solid #f3f4f6; } /* Separar secciones */
+.fileInputLabel { display: inline-block; padding: 8px 15px; background-color: #10b981; color: white; border: none; border-radius: 6px; font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: background-color 0.2s ease-in-out; margin-right: 10px; }
+.fileInputLabel:hover { background-color: #059669; }
+.fileInput { display: none; }
+.fileName { font-size: 0.8rem; color: #6b7280; margin-left: 10px; }
+.uploadButton { /* Se aplica .actionButtonBase y .primaryButton en el componente */ }
+.buttonContainer { display: flex; justify-content: flex-end; gap: 10px; margin-top: 15px; }
+.sectionSubtitle { font-size: 1rem; font-weight: 600; color: #4b5563; padding-top: 10; margin-bottom: 15px; }
+/* ** Nuevo estilo para la sección de sub-estado ** */
+.subStatusSection { margin-top: 20px; padding-bottom: 20px; border-bottom: 1px solid #f3f4f6; }
+.subStatusSelect { /* Reutilizar estilo de select */ width: 100%; padding: 8px 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.875rem; box-sizing: border-box; color: #1f2937; background-color: #fff; }
+.subStatusSelect:focus { border-color: #6366f1; outline: none; box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3); }
 
-.receptionLabel {
-    display: block;
+/* --- Estilos para Sección Facturación --- */
+.billingSection { background-color: #ffffff; padding: 20px 25px; border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); margin-top: 30px; }
+.invoiceInfo { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px 20px; margin-top: 10px; padding: 10px 0; } /* Cambiado a grid para mejor alineación */
+.invoiceDataItem { /* Contenedor para cada dato */ }
+.invoiceDataLabel { font-weight: 500; color: #4b5563; font-size: 0.8rem; display: block; margin-bottom: 3px; }
+.invoiceDataValue { font-size: 0.9rem; color: #1f2937; }
+.invoiceLink a { color: #4f46e5; text-decoration: none; font-weight: 500; }
+.invoiceLink a:hover { text-decoration: underline; }
+.paymentStatusLabel { font-weight: 500; color: #4b5563; margin-right: 8px; }
+.paymentStatusBadge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 500; border: 1px solid transparent; }
+.paymentPending { background-color: #fef3c7; color: #a16207; border-color: #fde68a; }
+.paymentPaid { background-color: #dcfce7; color: #166534; border-color: #86efac; }
+/* ** Estilos para el formulario de carga de factura ** */
+.billingForm {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas adaptables */
+    gap: 15px 20px;
+    margin-top: 15px;
+}
+.billingFormGroup { /* Reutilizar estilo */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.billingLabel { /* Reutilizar estilo */
     font-size: 0.8rem;
     font-weight: 500;
     color: #4b5563;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
-
-.receptionInput,
-.receptionTextarea {
+.billingInput { /* Reutilizar estilo */
     width: 100%;
     padding: 8px 10px;
     border: 1px solid #d1d5db;
     border-radius: 6px;
     font-size: 0.875rem;
     box-sizing: border-box;
-    color: #e0e5ec;
+    color: #1f2937;
 }
-
-.receptionTextarea {
-    min-height: 80px;
-    resize: vertical;
+.billingInput:focus {
+    border-color: #6366f1;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
 }
-
-.receptionInput:focus,
-.receptionTextarea:focus {
-  border-color: #6366f1;
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
-}
-
-.receptionButtonContainer {
+.billingFileInputGroup {
+    grid-column: 1 / -1; /* Ocupar toda la fila */
     display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 15px;
-    clear: both;
-}
-
-.actionButtonBase {
-  padding: 8px 15px;
-  border: none;
-  border-radius: 6px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.primaryButton {
-  background-color: #4f46e5;
-  color: white;
-}
-.primaryButton:hover {
-  background-color: #4338ca;
-}
-
-.secondaryButton {
-  background-color: #f3f4f6;
-  color: #4b5563;
-  border: 1px solid #d1d5db;
-}
-.secondaryButton:hover {
-  background-color: #e5e7eb;
-}
-
-/* --- Nuevos Estilos para Sección En Ejecución --- */
-.inProgressSection {
-  background-color: #ffffff;
-  padding: 20px 25px;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  margin-top: 30px;
-}
-
-.requestForm {
-    margin-bottom: 25px; /* Espacio antes de la sección de adjuntos */
-}
-
-.requestFormGroup {
-    margin-bottom: 15px;
-}
-
-.requestLabel { /* Reutilizar estilo de label */
-    display: block;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: #0f1621;
-    margin-bottom: 5px;
-}
-
-.requestSelect,
-.requestTextarea { /* Reutilizar estilo de input/textarea */
-    width: 100%;
-    padding: 8px 10px;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    font-size: 0.875rem;
-    box-sizing: border-box;
-    color: #4b5563;
-}
-.requestTextarea {
-    min-height: 80px;
-    resize: vertical;
-}
-.requestSelect:focus,
-.requestTextarea:focus {
-  border-color: #6366f1;
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
-}
-
-.attachmentSection {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #f3f4f6; /* Separador ligero */
-}
-
-.fileInputLabel { /* Estilo para que el label parezca un botón */
-    display: inline-block;
-    padding: 8px 15px;
-    background-color: #10b981; /* Verde (igual que peritación) */
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    margin-right: 10px; /* Espacio antes del botón de subir */
-}
-.fileInputLabel:hover {
-    background-color: #059669;
-}
-
-.fileInput { /* Ocultar el input de archivo real */
-    display: none;
-}
-
-.fileName { /* Estilo para mostrar nombre de archivo seleccionado */
-    font-size: 0.8rem;
-    color: #6b7280;
-    margin-left: 10px;
-}
-
-
-.buttonContainer { /* Contenedor para botones al final de la sección */
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-/* --- Nuevos Estilos para Sección Facturación --- */
-.billingSection {
-  background-color: #ffffff;
-  padding: 20px 25px;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  margin-top: 30px;
-}
-
-.invoiceInfo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    margin-top: 10px;
-    padding: 10px 0;
-}
-
-.invoiceLink a {
-    color: #4f46e5;
-    text-decoration: none;
-    font-weight: 500;
-}
-.invoiceLink a:hover {
-    text-decoration: underline;
-}
-
-.paymentStatusLabel {
-    font-weight: 500;
-    color: #4b5563;
-    margin-right: 8px;
-}
-
-.paymentStatusBadge {
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  border: 1px solid transparent;
-}
-
-.paymentPending { /* Pendiente de Pago */
-  background-color: #fef3c7; /* Amarillo claro */
-  color: #a16207; /* Amarillo oscuro */
-  border-color: #fde68a;
-}
-.paymentPaid { /* Pagada */
-  background-color: #dcfce7; /* Verde claro */
-  color: #166534; /* Verde oscuro */
-  border-color: #86efac;
+    flex-direction: column;
+    gap: 5px;
 }

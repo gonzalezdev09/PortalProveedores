@@ -62,13 +62,25 @@ export enum UserRole {
   }
   
   /**
+   * Define la calidad de una pieza.
+   */
+  export enum PartQuality {
+      NO = 'NO', // Nuevo Original
+      OU = 'OU', // Original Usado
+      NR = 'NR', // Nuevo Reemplazo
+  }
+  
+  /**
    * Define la estructura de una Pieza asociada a una orden.
    */
   export interface Part {
-      id: string;
-      name: string;
+      id: string; // ID único de la pieza en esta orden
+      name: string; // Nombre o descripción de la pieza
       quantity: number;
-      receptionDate?: string | null; // YYYY-MM-DD
+      supplier?: string; // Proveedor de la pieza (opcional)
+      quality?: PartQuality; // Calidad de la pieza (opcional)
+      deliveryDays?: number; // Días de entrega estimados (opcional)
+      receptionDate?: string | null; // Fecha de recepción (YYYY-MM-DD), opcional
   }
   
   /**
@@ -93,10 +105,26 @@ export enum UserRole {
     parts?: Part[];
     vehicleReceptionDate?: string | null; // YYYY-MM-DD
     receptionComment?: string | null;
-    // Nuevos campos para Facturación
-    invoiceUrl?: string | null; // URL o identificador de la factura cargada
-    invoicePaymentStatus?: InvoicePaymentStatus | null; // Estado del pago
+    invoiceUrl?: string | null;
+    invoicePaymentStatus?: InvoicePaymentStatus | null;
+    subStatus?: RepairSubStatus | null;
+    // Nuevos campos para info de factura
+    invoiceNcf?: string | null;
+    invoiceDueDate?: string | null; // YYYY-MM-DD
+    invoiceAmount?: number | null;
   }
+
+  export enum RepairSubStatus {
+    DISASSEMBLY = 'En Desarme',
+    BODYWORK = 'En Desabolladura',
+    PREP_PAINT = 'En preparación para pintura',
+    PAINTING = 'En proceso de pintura',
+    FINISHING = 'En proceso de acabado',
+    ASSEMBLY = 'En proceso de armado',
+    POLISHING = 'En proceso de Brillado',
+    WASHING = 'En proceso de Lavado',
+    READY_DELIVERY = 'Listo para la entrega',
+}
   
   /**
    * Define la estructura de un evento en el historial de la orden.
