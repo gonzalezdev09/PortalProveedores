@@ -82,6 +82,26 @@ export enum UserRole {
       deliveryDays?: number; // Días de entrega estimados (opcional)
       receptionDate?: string | null; // Fecha de recepción (YYYY-MM-DD), opcional
   }
+
+  export enum OperationCode {
+    R = 'R',   // Reparar
+    P = 'P',   // Pintar
+    S = 'S',   // Sustituir
+    M = 'M',   // Desmontaje y Montaje
+    RP = 'RP', // Reparar y Pintar
+    SP = 'SP', // Sustituir y Pintar
+    MP = 'MP', // Montaje y Pintar
+    OT = 'OT', // Otros
+}
+
+/**
+ * Define la estructura de un trabajo a realizar en la orden.
+ */
+export interface WorkItem {
+    id: string; // ID único del trabajo
+    operation: OperationCode; // Código de operación
+    partName: string; // Nombre de la pieza o área
+}
   
   /**
    * Define la estructura detallada de un objeto Orden.
@@ -103,6 +123,7 @@ export enum UserRole {
     vehicleColor?: string;
     history: HistoryEvent[];
     parts?: Part[];
+    workItems?: WorkItem[]; // ** Añadido: Trabajos a realizar *
     vehicleReceptionDate?: string | null; // YYYY-MM-DD
     receptionComment?: string | null;
     invoiceUrl?: string | null;

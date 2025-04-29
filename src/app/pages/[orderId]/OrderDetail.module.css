@@ -257,3 +257,41 @@
     flex-direction: column;
     gap: 5px;
 }
+
+
+/* --- Nuevos Estilos para Trabajos a Realizar --- */
+.workItemsSection {
+  background-color: #ffffff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  margin-top: 30px;
+}
+
+.workItemsLegend {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.workItemsGrid {
+  display: grid;
+  /* Crear 3 columnas de operación + pieza */
+  grid-template-columns: repeat(3, auto 1fr);
+  gap: 10px 20px; /* Espacio vertical y horizontal */
+  font-size: 0.9rem;
+}
+
+.workItemOperation {
+  font-weight: 600;
+  color: #4f46e5; /* Color índigo para operación */
+  text-align: right;
+  white-space: nowrap;
+}
+
+.workItemPart {
+  color: #1f2937;
+}
