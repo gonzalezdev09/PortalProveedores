@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation'; // Hook para obtener parámetros de ruta
-import { OrderDetail, OrderStatus, OrderType, InvoicePaymentStatus, PartQuality, RepairSubStatus, OperationCode, wor } from '../../types'; // Ajusta la ruta si types.ts está en otro lugar
+import { OrderDetail, OrderStatus, OrderType, InvoicePaymentStatus, PartQuality, RepairSubStatus, OperationCode } from '../../types'; // Ajusta la ruta si types.ts está en otro lugar
 import styles from './OrderDetail.module.css';
 
 // --- Simulación de API para obtener detalle de orden ---
